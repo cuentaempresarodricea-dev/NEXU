@@ -23,7 +23,7 @@
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
       <a href="#" class="nav-logo">
-        <span class="logo-icon">N</span>
+        <img src="LOGO NEXU APP NO LETTERS.png" alt="NEXU" class="logo-img" />
         <span class="logo-text">NEXU</span>
       </a>
       <ul class="nav-links">
@@ -40,12 +40,15 @@
   </nav>
 
   <!-- ═══════════════════════════════════════
-       HERO — SCROLL-DRIVEN FRAMES + 3D
+       HERO — VIDEO BACKGROUND
   ═══════════════════════════════════════ -->
   <section class="hero-section" id="hero">
-    <!-- Sticky canvas container -->
     <div class="hero-sticky" id="heroSticky">
-      <canvas id="frameCanvas"></canvas>
+
+      <!-- Video de fondo -->
+      <video class="hero-video" id="heroVideo" autoplay muted loop playsinline>
+        <source src="Animate_video_for_landing_page_202605041640.mp4" type="video/mp4" />
+      </video>
 
       <!-- Gradient overlay -->
       <div class="hero-overlay"></div>
@@ -57,9 +60,8 @@
           Gestión financiera inteligente
         </div>
         <h1 class="hero-title">
-          Controla tus<br />
-          <em>préstamos.</em><br />
-          Crece tu negocio.
+          Donde el dinero<br />
+          <em>encuentra confianza.</em>
         </h1>
         <p class="hero-sub">
           La plataforma todo-en-uno para prestamistas independientes,<br class="hide-sm" />
@@ -73,11 +75,6 @@
           <span>Desliza para explorar</span>
           <div class="scroll-arrow"></div>
         </div>
-      </div>
-
-      <!-- Frame progress indicator -->
-      <div class="frame-progress" id="frameProgress">
-        <div class="frame-progress-bar" id="frameProgressBar"></div>
       </div>
     </div>
   </section>
@@ -645,9 +642,9 @@
 
       <div class="metrics-grid">
         <div class="metric-card reveal">
-          <div class="metric-value" data-target="500">0</div>
-          <div class="metric-suffix">+</div>
-          <div class="metric-label">Prestamistas activos</div>
+          <div class="metric-value" data-target="99">0</div>
+          <div class="metric-suffix">%</div>
+          <div class="metric-label">Disponibilidad de la plataforma</div>
         </div>
         <div class="metric-card reveal">
           <div class="metric-value" data-target="98">0</div>
@@ -716,8 +713,7 @@
       <div class="cta-inner reveal">
         <div class="cta-badge">Sin tarjeta de crédito · Sin límite de tiempo</div>
         <h2 class="cta-title">¿Listo para tomar<br />el control de tu cartera?</h2>
-        <p class="cta-sub">Únete a más de prestamistas que ya gestionan su negocio con NEXU. Configura tu cuenta en
-          menos de 5 minutos.</p>
+        <p class="cta-sub">Gestiona tu cartera de forma profesional con NEXU. Registra clientes, genera préstamos y cobra al instante. Configura tu cuenta en menos de 5 minutos.</p>
         <div class="cta-actions">
           <a href="#" class="btn-primary btn-large" id="cta-main">Empieza gratis hoy</a>
           <a href="#" class="btn-ghost">Solicitar demo</a>
