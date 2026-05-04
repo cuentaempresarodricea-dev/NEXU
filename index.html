@@ -24,6 +24,7 @@
       <ul class="nav-links">
         <li><a href="#features">Características</a></li>
         <li><a href="#how">Cómo funciona</a></li>
+        <li><a href="#guia">Guía de Usuario</a></li>
         <li><a href="#metrics">Métricas</a></li>
         <li><a href="#cta" class="btn-nav">Empieza gratis</a></li>
       </ul>
@@ -238,6 +239,265 @@
   </section>
 
   <!-- ═══════════════════════════════════════
+       GUÍA DE USUARIO
+  ═══════════════════════════════════════ -->
+  <section class="guide-section" id="guia">
+    <div class="container">
+      <div class="section-label reveal">Documentación</div>
+      <h2 class="section-title reveal">Guía de<br/><span class="accent">Usuario NEXU</span></h2>
+      <p class="section-sub reveal">Explora cada módulo de la app con capturas de pantalla reales y descripciones detalladas.</p>
+
+      <div class="guide-pdf-btn-wrap reveal">
+        <button class="btn-pdf" id="downloadPdfTop" onclick="generateNexuPDF()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17"/></svg>
+          Descargar Guía Completa en PDF
+        </button>
+      </div>
+
+      <div class="guide-accordion" id="guideAccordion">
+
+        <!-- MODULE 1: Menú Principal -->
+        <div class="guide-module reveal" data-module="0">
+          <button class="guide-module-header" aria-expanded="false">
+            <div class="guide-module-title">
+              <span class="guide-module-num">01</span>
+              <div>
+                <strong>Menú Principal</strong>
+                <span>Vista general de acceso a todos los módulos</span>
+              </div>
+            </div>
+            <svg class="guide-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="guide-module-body">
+            <p class="guide-desc">Grid de 6 módulos de acceso directo: <strong>PRÉSTAMOS, CLIENTES, NUEVO PRÉSTAMO, ESTADÍSTICAS, PAGOS PENDIENTES</strong> y <strong>RUTA HOY</strong>. Es el punto de entrada central de la app desde donde se navega a toda la operación.</p>
+            <div class="guide-phones-grid">
+              <div class="phone-mockup" data-img="nexu_images/image1.png" data-caption="Menú Principal — Vista 1 (parte superior)">
+                <div class="phone-frame"><div class="phone-notch"></div><img src="nexu_images/image1.png" alt="Menú Principal Vista 1" loading="lazy"/></div>
+                <p class="phone-caption">Vista 1 — Parte superior</p>
+              </div>
+              <div class="phone-mockup" data-img="nexu_images/image2.png" data-caption="Menú Principal — Vista 2 (parte inferior)">
+                <div class="phone-frame"><div class="phone-notch"></div><img src="nexu_images/image2.png" alt="Menú Principal Vista 2" loading="lazy"/></div>
+                <p class="phone-caption">Vista 2 — Parte inferior</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MODULE 2: Clientes -->
+        <div class="guide-module reveal" data-module="1">
+          <button class="guide-module-header" aria-expanded="false">
+            <div class="guide-module-title">
+              <span class="guide-module-num">02</span>
+              <div>
+                <strong>Módulo de Clientes</strong>
+                <span>Cartera, fichas y formularios de registro</span>
+              </div>
+            </div>
+            <svg class="guide-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="guide-module-body">
+            <p class="guide-desc"><strong>Lista de cartera:</strong> tarjetas con foto, nombre, localidad e importe activo. <strong>Formulario de registro:</strong> ID automático, Nombre, DPI, Dirección, Teléfono, Email, coordenadas GPS y foto del cliente.</p>
+            <div class="guide-phones-grid">
+              <div class="phone-mockup" data-img="nexu_images/image3.png" data-caption="Clientes — Lista de cartera">
+                <div class="phone-frame"><div class="phone-notch"></div><img src="nexu_images/image3.png" alt="Clientes Lista" loading="lazy"/></div>
+                <p class="phone-caption">Lista de cartera</p>
+              </div>
+              <div class="phone-mockup" data-img="nexu_images/image4.png" data-caption="Clientes — Formulario datos personales">
+                <div class="phone-frame"><div class="phone-notch"></div><img src="nexu_images/image4.png" alt="Formulario datos personales" loading="lazy"/></div>
+                <p class="phone-caption">Formulario datos personales</p>
+              </div>
+              <div class="phone-mockup" data-img="nexu_images/image5.png" data-caption="Clientes — Formulario GPS y foto">
+                <div class="phone-frame"><div class="phone-notch"></div><img src="nexu_images/image5.png" alt="Formulario GPS y foto" loading="lazy"/></div>
+                <p class="phone-caption">Formulario GPS y foto</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MODULE 3: Préstamos -->
+        <div class="guide-module reveal" data-module="2">
+          <button class="guide-module-header" aria-expanded="false">
+            <div class="guide-module-title">
+              <span class="guide-module-num">03</span>
+              <div>
+                <strong>Módulo de Préstamos</strong>
+                <span>Créditos activos, formulario y detalle de cuotas</span>
+              </div>
+            </div>
+            <svg class="guide-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="guide-module-body">
+            <p class="guide-desc">Lista de <strong>créditos activos</strong> con acceso a PDF y comprobante. <strong>Nuevo préstamo:</strong> monto, interés %, modalidad (Diario/Semanal/Mensual), cuota y total calculados automáticamente. <strong>Detalle:</strong> tabla de cuotas con estado PENDIENTE/PAGADO y resumen de ganancia proyectada.</p>
+            <div class="guide-phones-grid">
+              <div class="phone-mockup" data-img="nexu_images/image6.png" data-caption="Préstamos — Lista de créditos activos">
+                <div class="phone-frame"><div class="phone-notch"></div><img src="nexu_images/image6.png" alt="Lista créditos activos" loading="lazy"/></div>
+                <p class="phone-caption">Lista de créditos activos</p>
+              </div>
+              <div class="phone-mockup" data-img="nexu_images/image7.png" data-caption="Préstamos — Formulario Parte 1">
+                <div class="phone-frame"><div class="phone-notch"></div><img src="nexu_images/image7.png" alt="Formulario Parte 1" loading="lazy"/></div>
+                <p class="phone-caption">Formulario — Condiciones</p>
+              </div>
+              <div class="phone-mockup" data-img="nexu_images/image8.png" data-caption="Préstamos — Formulario Parte 2 (cuotas y total)">
+                <div class="phone-frame"><div class="phone-notch"></div><img src="nexu_images/image8.png" alt="Formulario Parte 2" loading="lazy"/></div>
+                <p class="phone-caption">Formulario — Cuotas y total</p>
+              </div>
+              <div class="phone-mockup" data-img="nexu_images/image9.png" data-caption="Préstamos — Formulario Parte 3 (GPS)">
+                <div class="phone-frame"><div class="phone-notch"></div><img src="nexu_images/image9.png" alt="Formulario GPS" loading="lazy"/></div>
+                <p class="phone-caption">Formulario — Ubicación GPS</p>
+              </div>
+              <div class="phone-mockup" data-img="nexu_images/image10.png" data-caption="Préstamos — Detalle Parte 1">
+                <div class="phone-frame"><div class="phone-notch"></div><img src="nexu_images/image10.png" alt="Detalle Parte 1" loading="lazy"/></div>
+                <p class="phone-caption">Detalle — Info y cuotas</p>
+              </div>
+              <div class="phone-mockup" data-img="nexu_images/image11.png" data-caption="Préstamos — Detalle Parte 2">
+                <div class="phone-frame"><div class="phone-notch"></div><img src="nexu_images/image11.png" alt="Detalle Parte 2" loading="lazy"/></div>
+                <p class="phone-caption">Detalle — Cuotas y resumen</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MODULE 4: Cajas -->
+        <div class="guide-module reveal" data-module="3">
+          <button class="guide-module-header" aria-expanded="false">
+            <div class="guide-module-title">
+              <span class="guide-module-num">04</span>
+              <div>
+                <strong>Módulo de Cajas</strong>
+                <span>Caja activa, movimientos y detalle contable</span>
+              </div>
+            </div>
+            <svg class="guide-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="guide-module-body">
+            <p class="guide-desc"><strong>Caja activa:</strong> saldo, ingresos, salidas y capital en campo en tiempo real. <strong>Movimientos:</strong> historial contable completo de todas las transacciones. <strong>Detalle individual:</strong> vista de auditoría por movimiento.</p>
+            <div class="guide-phones-grid">
+              <div class="phone-mockup" data-img="nexu_images/image12.png" data-caption="Cajas — Caja activa con resumen financiero">
+                <div class="phone-frame"><div class="phone-notch"></div><img src="nexu_images/image12.png" alt="Caja activa" loading="lazy"/></div>
+                <p class="phone-caption">Caja activa</p>
+              </div>
+              <div class="phone-mockup" data-img="nexu_images/image13.png" data-caption="Movimientos — Historial de transacciones">
+                <div class="phone-frame"><div class="phone-notch"></div><img src="nexu_images/image13.png" alt="Historial movimientos" loading="lazy"/></div>
+                <p class="phone-caption">Historial de transacciones</p>
+              </div>
+              <div class="phone-mockup" data-img="nexu_images/image14.png" data-caption="Movimientos — Detalle de movimiento individual">
+                <div class="phone-frame"><div class="phone-notch"></div><img src="nexu_images/image14.png" alt="Detalle movimiento" loading="lazy"/></div>
+                <p class="phone-caption">Detalle de movimiento</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MODULE 5: Pagos -->
+        <div class="guide-module reveal" data-module="4">
+          <button class="guide-module-header" aria-expanded="false">
+            <div class="guide-module-title">
+              <span class="guide-module-num">05</span>
+              <div>
+                <strong>Módulo de Pagos</strong>
+                <span>Pendientes y próximos pagos</span>
+              </div>
+            </div>
+            <svg class="guide-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="guide-module-body">
+            <p class="guide-desc"><strong>Pagos Pendientes:</strong> cuotas no cobradas para gestión de mora. <strong>Próximos Pagos:</strong> calendario de cobros futuros ordenados por fecha para planificación de cobranza.</p>
+            <div class="guide-phones-grid">
+              <div class="phone-mockup" data-img="nexu_images/image15.png" data-caption="Pagos Pendientes — Cuotas por cobrar">
+                <div class="phone-frame"><div class="phone-notch"></div><img src="nexu_images/image15.png" alt="Pagos pendientes" loading="lazy"/></div>
+                <p class="phone-caption">Cuotas por cobrar</p>
+              </div>
+              <div class="phone-mockup" data-img="nexu_images/image16.png" data-caption="Próximos Pagos — Calendario de cobros futuros">
+                <div class="phone-frame"><div class="phone-notch"></div><img src="nexu_images/image16.png" alt="Próximos pagos" loading="lazy"/></div>
+                <p class="phone-caption">Calendario de cobros futuros</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MODULE 6: Estadísticas -->
+        <div class="guide-module reveal" data-module="5">
+          <button class="guide-module-header" aria-expanded="false">
+            <div class="guide-module-title">
+              <span class="guide-module-num">06</span>
+              <div>
+                <strong>Estadísticas</strong>
+                <span>Panel ejecutivo financiero</span>
+              </div>
+            </div>
+            <svg class="guide-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="guide-module-body">
+            <p class="guide-desc">Panel ejecutivo con métricas clave: <strong>capital prestado, recuperado, pendiente y ganancias esperadas</strong>. Botón para generar reporte diario en PDF con el resumen financiero completo de la jornada.</p>
+            <div class="guide-phones-grid">
+              <div class="phone-mockup" data-img="nexu_images/image17.png" data-caption="Estadísticas — Resumen financiero diario">
+                <div class="phone-frame"><div class="phone-notch"></div><img src="nexu_images/image17.png" alt="Estadísticas" loading="lazy"/></div>
+                <p class="phone-caption">Resumen financiero diario</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MODULE 7: Ruta Hoy -->
+        <div class="guide-module reveal" data-module="6">
+          <button class="guide-module-header" aria-expanded="false">
+            <div class="guide-module-title">
+              <span class="guide-module-num">07</span>
+              <div>
+                <strong>Módulo de Ruta Hoy</strong>
+                <span>Gestión de cobranza diaria por ruta</span>
+              </div>
+            </div>
+            <svg class="guide-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="guide-module-body">
+            <p class="guide-desc"><strong>Menú de rutas:</strong> Empleado 1, Admin, General y Pagos Recibidos. Cada ruta muestra clientes con monto de cuota, ícono de mapa y botón de registrar cobro. <strong>Pagos Recibidos Hoy:</strong> cierre del ciclo de cobranza diaria con todos los cobros completados.</p>
+            <div class="guide-phones-grid">
+              <div class="phone-mockup" data-img="nexu_images/image18.png" data-caption="Ruta Hoy — Menú de selección de rutas">
+                <div class="phone-frame"><div class="phone-notch"></div><img src="nexu_images/image18.png" alt="Ruta menú" loading="lazy"/></div>
+                <p class="phone-caption">Menú de rutas</p>
+              </div>
+              <div class="phone-mockup" data-img="nexu_images/image19.png" data-caption="Ruta Empleado 1 — Cobros asignados">
+                <div class="phone-frame"><div class="phone-notch"></div><img src="nexu_images/image19.png" alt="Ruta Empleado 1" loading="lazy"/></div>
+                <p class="phone-caption">Ruta Empleado 1</p>
+              </div>
+              <div class="phone-mockup" data-img="nexu_images/image20.png" data-caption="Ruta Admin — Cobros del administrador">
+                <div class="phone-frame"><div class="phone-notch"></div><img src="nexu_images/image20.png" alt="Ruta Admin" loading="lazy"/></div>
+                <p class="phone-caption">Ruta Admin</p>
+              </div>
+              <div class="phone-mockup" data-img="nexu_images/image21.png" data-caption="Ruta General — Todos los cobros del día">
+                <div class="phone-frame"><div class="phone-notch"></div><img src="nexu_images/image21.png" alt="Ruta General" loading="lazy"/></div>
+                <p class="phone-caption">Ruta General</p>
+              </div>
+              <div class="phone-mockup" data-img="nexu_images/image22.png" data-caption="Pagos Recibidos Hoy — Cobros completados">
+                <div class="phone-frame"><div class="phone-notch"></div><img src="nexu_images/image22.png" alt="Pagos recibidos hoy" loading="lazy"/></div>
+                <p class="phone-caption">Pagos Recibidos Hoy</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /guide-accordion -->
+
+      <div class="guide-pdf-btn-wrap reveal" style="margin-top:48px">
+        <button class="btn-pdf" id="downloadPdfBottom" onclick="generateNexuPDF()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17"/></svg>
+          Descargar Guía Completa en PDF
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Vista ampliada">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar">✕</button>
+    <div class="lightbox-content">
+      <img src="" alt="" id="lightboxImg"/>
+      <p id="lightboxCaption"></p>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
        MÉTRICAS / TESTIMONIOS
   ═══════════════════════════════════════ -->
   <section class="metrics-section" id="metrics">
@@ -382,6 +642,7 @@
     </div>
   </footer>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
