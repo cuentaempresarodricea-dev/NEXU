@@ -38,16 +38,10 @@
   </nav>
 
   <!-- ═══════════════════════════════════════
-       HERO — SCROLL-DRIVEN FRAMES
+       HERO
   ═══════════════════════════════════════ -->
   <section class="hero-section" id="hero">
-    <div class="hero-sticky">
-      <canvas id="frameCanvas"></canvas>
-
-      <!-- Gradient overlay -->
-      <div class="hero-overlay"></div>
-
-      <!-- Hero content -->
+    <div class="hero-inner">
       <div class="hero-content" id="heroContent">
         <div class="hero-badge">
           <span class="badge-dot"></span>
@@ -66,15 +60,9 @@
           <a href="#cta" class="btn-primary" id="hero-cta">Empieza gratis hoy</a>
           <a href="#features" class="btn-ghost">Ver características</a>
         </div>
-        <div class="hero-scroll-hint" id="scrollHint">
-          <span>Desliza para explorar</span>
-          <div class="scroll-arrow"></div>
-        </div>
       </div>
-
-      <!-- Frame progress indicator -->
-      <div class="frame-progress" id="frameProgress">
-        <div class="frame-progress-bar" id="frameProgressBar"></div>
+      <div class="hero-image-wrap">
+        <img src="mujer sosteniendo el celular con el logo de NEXU.png" alt="NEXU App" class="hero-image" />
       </div>
     </div>
   </section>
@@ -302,12 +290,13 @@
       <div class="pricing-grid">
         <div class="pricing-card reveal">
           <div class="pricing-name">Starter</div>
-          <div class="pricing-price">$0 <span>/mes</span></div>
+          <div class="pricing-trial">Prueba gratuita de 15 días</div>
           <p class="pricing-desc">Perfecto para empezar a gestionar tus préstamos.</p>
           <ul class="pricing-features">
             <li>Hasta 50 clientes</li>
-            <li>100 préstamos gestionados</li>
+            <li>Hasta 100 préstamos</li>
             <li>Dashboard básico</li>
+            <li>Gestión de clientes</li>
             <li>Recordatorios automáticos</li>
             <li>Soporte por email</li>
           </ul>
@@ -317,14 +306,15 @@
         <div class="pricing-card pricing-card--popular reveal">
           <div class="pricing-badge">Más popular</div>
           <div class="pricing-name">Growth</div>
-          <div class="pricing-price">$19 <span>/mes</span></div>
+          <div class="pricing-trial">Prueba gratuita de 15 días</div>
           <p class="pricing-desc">Para prestamistas que buscan escalar su operación.</p>
           <ul class="pricing-features">
             <li>Clientes ilimitados</li>
             <li>Préstamos ilimitados</li>
             <li>Dashboard avanzado</li>
             <li>Reportes financieros PDF</li>
-            <li>Alertas personalizables</li>
+            <li>Alertas y notificaciones</li>
+            <li>Estadísticas detalladas</li>
             <li>Soporte prioritario</li>
           </ul>
           <a href="#cta" class="btn-primary">Lo quiero</a>
@@ -332,13 +322,15 @@
 
         <div class="pricing-card reveal">
           <div class="pricing-name">Enterprise</div>
-          <div class="pricing-price">$49 <span>/mes</span></div>
+          <div class="pricing-trial">Prueba gratuita de 15 días</div>
           <p class="pricing-desc">Solución completa para instituciones financieras.</p>
           <ul class="pricing-features">
             <li>Todo lo de Growth</li>
             <li>Múltiples empleados y rutas</li>
             <li>API de integración</li>
             <li>Reportes personalizados</li>
+            <li>Notificaciones push y SMS</li>
+            <li>Estadísticas avanzadas</li>
             <li>Gerente de cuenta dedicado</li>
             <li>SLA garantizado</li>
           </ul>
@@ -734,24 +726,24 @@
 
       <div class="metrics-grid">
         <div class="metric-card reveal">
-          <div class="metric-value" data-target="500">0</div>
-          <div class="metric-suffix">+</div>
-          <div class="metric-label">Prestamistas activos</div>
-        </div>
-        <div class="metric-card reveal">
           <div class="metric-value" data-target="98">0</div>
           <div class="metric-suffix">%</div>
           <div class="metric-label">Satisfacción del usuario</div>
         </div>
         <div class="metric-card reveal">
-          <div class="metric-value" data-target="12000">0</div>
-          <div class="metric-suffix">+</div>
-          <div class="metric-label">Préstamos gestionados</div>
-        </div>
-        <div class="metric-card reveal">
           <div class="metric-value" data-target="40">0</div>
           <div class="metric-suffix">%</div>
           <div class="metric-label">Reducción de mora</div>
+        </div>
+        <div class="metric-card reveal">
+          <div class="metric-value" data-target="10000">0</div>
+          <div class="metric-suffix">+</div>
+          <div class="metric-label">Clientes registrados</div>
+        </div>
+        <div class="metric-card reveal">
+          <div class="metric-value" data-target="45">0</div>
+          <div class="metric-suffix">M+</div>
+          <div class="metric-label">Desembolsados</div>
         </div>
       </div>
 
@@ -764,7 +756,7 @@
             <div class="author-avatar">ML</div>
             <div>
               <strong>María López</strong>
-              <span>Prestamista independiente, Guadalajara</span>
+              <span>Ciudad de Guatemala, Guatemala</span>
             </div>
           </div>
         </div>
@@ -776,7 +768,7 @@
             <div class="author-avatar">CR</div>
             <div>
               <strong>Carlos Reyes</strong>
-              <span>Microfinanciera Solidaria, CDMX</span>
+              <span>Patulul, Suchitepequez, Guatemala</span>
             </div>
           </div>
         </div>
@@ -788,7 +780,7 @@
             <div class="author-avatar">AP</div>
             <div>
               <strong>Ana Pacheco</strong>
-              <span>Cooperativa de Ahorro, Monterrey</span>
+              <span>Santa Bárbara Suchitepequez, Guatemala</span>
             </div>
           </div>
         </div>
@@ -834,7 +826,7 @@
           <div class="footer-social">
             <a href="#" aria-label="Twitter">𝕏</a>
             <a href="#" aria-label="LinkedIn">in</a>
-            <a href="#" aria-label="Instagram">📷</a>
+            <a href="https://www.instagram.com/nexu__app/" aria-label="Instagram" target="_blank" rel="noopener">📷</a>
           </div>
         </div>
         <div class="footer-col">
@@ -851,22 +843,22 @@
           <ul>
             <li><a href="#">Nosotros</a></li>
             <li><a href="#">Blog</a></li>
-            <li><a href="#">Soporte</a></li>
+            <li><a href="https://calendly.com/cuentaempresarodricea/30min" target="_blank" rel="noopener">Soporte</a></li>
             <li><a href="#">Contacto</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Legal</h4>
           <ul>
-            <li><a href="#">Privacidad</a></li>
-            <li><a href="#">Términos</a></li>
-            <li><a href="#">Seguridad</a></li>
+            <li><a href="https://sites.google.com/view/ester-x-sa/t%C3%A9rminos-y-condiciones-nexu" target="_blank" rel="noopener">Privacidad</a></li>
+            <li><a href="https://sites.google.com/view/ester-x-sa/t%C3%A9rminos-y-condiciones-nexu" target="_blank" rel="noopener">Términos</a></li>
+            <li><a href="https://sites.google.com/view/ester-x-sa/t%C3%A9rminos-y-condiciones-nexu" target="_blank" rel="noopener">Seguridad</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
         <p>© 2025 NEXU. Todos los derechos reservados.</p>
-        <p>Hecho con ❤️ para prestamistas que quieren crecer.</p>
+        <p>Hecho por <a href="https://sites.google.com/view/ester-x-sa/inicio" target="_blank" rel="noopener" style="color:var(--teal);text-decoration:underline;">Ester X SA</a></p>
       </div>
     </div>
   </footer>
