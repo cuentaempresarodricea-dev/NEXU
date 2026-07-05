@@ -1,6 +1,5 @@
 /* ══════════════════════════════════════
    NEXU — script.js
-   Video hero + UI interactions
    ══════════════════════════════════════ */
 
 (function () {
@@ -85,27 +84,168 @@
     const links = document.querySelector('.nav-links');
     if (!btn || !links) return;
     btn.addEventListener('click', () => {
-      const open = links.style.display === 'flex';
-      links.style.display = open ? 'none' : 'flex';
-      links.style.flexDirection = 'column';
-      links.style.position = 'absolute';
-      links.style.top = '70px';
-      links.style.left = '0';
-      links.style.right = '0';
-      links.style.background = 'rgba(13,27,62,0.97)';
-      links.style.padding = '24px';
-      links.style.gap = '20px';
-      links.style.backdropFilter = 'blur(16px)';
+      const open = links.classList.contains('nav-mobile-open');
+      if (open) {
+        links.classList.remove('nav-mobile-open');
+        links.style.display = 'none';
+      } else {
+        links.classList.add('nav-mobile-open');
+        links.style.display = 'flex';
+        links.style.flexDirection = 'column';
+        links.style.position = 'absolute';
+        links.style.top = '70px';
+        links.style.left = '0';
+        links.style.right = '0';
+        links.style.background = 'rgba(255,255,255,0.98)';
+        links.style.padding = '24px';
+        links.style.gap = '20px';
+        links.style.backdropFilter = 'blur(16px)';
+        links.style.boxShadow = '0 8px 32px rgba(9,38,82,0.12)';
+        links.style.borderRadius = '0 0 20px 20px';
+      }
     });
     links.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => { links.style.display = 'none'; });
+      a.addEventListener('click', () => {
+        links.classList.remove('nav-mobile-open');
+        links.style.display = 'none';
+      });
     });
+  }
+
+  // ═══════════════════════════════════════
+  // CANVAS SCROLL FRAME ANIMATION
+  // ═══════════════════════════════════════
+  const TOTAL_FRAMES = 200;
+  var frameImages    = [];
+  var framesLoaded   = false;
+  var canvas         = null;
+  var ctx            = null;
+  var progressBar    = null;
+  var framePrefix    = 'frames/ezgif-frame-';
+  var currentFrame   = -1;
+  var heroSection    = null;
+  var heroContent    = null;
+
+  function pad(n) { return n < 10 ? '00' + n : n < 100 ? '0' + n : n; }
+
+  function initCanvas() {
+    canvas      = document.getElementById('frameCanvas');
+    if (!canvas) return;
+    ctx         = canvas.getContext('2d');
+    progressBar = document.getElementById('frameProgressBar');
+    heroSection = document.getElementById('hero');
+    heroContent = document.getElementById('heroContent');
+
+    preloadFrames();
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+  }
+
+  function preloadFrames() {
+    var loaded = 0;
+    for (var i = 1; i <= TOTAL_FRAMES; i++) {
+      var img = new Image();
+      img.src = framePrefix + pad(i) + '.jpg';
+      img.onload = function() {
+        loaded++;
+        if (loaded === TOTAL_FRAMES) {
+          framesLoaded = true;
+          updateFrames();
+        }
+      };
+      img.onerror = function() {
+        loaded++;
+        if (loaded === TOTAL_FRAMES) {
+          framesLoaded = true;
+          updateFrames();
+        }
+      };
+      frameImages.push(img);
+    }
+  }
+
+  function resizeCanvas() {
+    if (!canvas) return;
+    canvas.width  = window.innerWidth;
+    canvas.height = window.innerHeight;
+    if (framesLoaded) drawFrame(currentFrame);
+  }
+
+  function drawFrame(index) {
+    if (index < 0 || index >= TOTAL_FRAMES || !frameImages[index] || !frameImages[index].complete) return;
+    var img = frameImages[index];
+    var cw = canvas.width, ch = canvas.height;
+    var iw = img.naturalWidth || img.width;
+    var ih = img.naturalHeight || img.height;
+    if (!iw || !ih) return;
+
+    var imgRatio = iw / ih;
+    var canRatio = cw / ch;
+    var sx, sy, sw, sh;
+
+    if (imgRatio > canRatio) {
+      sh = ih;
+      sw = ih * canRatio;
+      sx = (iw - sw) / 2;
+      sy = 0;
+    } else {
+      sw = iw;
+      sh = iw / canRatio;
+      sx = 0;
+      sy = (ih - sh) / 2;
+    }
+
+    ctx.drawImage(img, sx, sy, sw, sh, 0, 0, cw, ch);
+  }
+
+  function updateFrames() {
+    if (!heroSection || !canvas) return;
+    var heroHeight  = heroSection.offsetHeight;
+    var vpHeight    = window.innerHeight;
+    var scrollable  = heroHeight - vpHeight;
+    if (scrollable <= 0) return;
+    var progress  = Math.min(Math.max(window.scrollY / scrollable, 0), 1);
+    var frameIdx  = Math.min(Math.floor(progress * (TOTAL_FRAMES - 1)), TOTAL_FRAMES - 1);
+
+    if (frameIdx !== currentFrame) {
+      currentFrame = frameIdx;
+      drawFrame(frameIdx);
+    }
+
+    if (progressBar) {
+      progressBar.style.width = (progress * 100) + '%';
+    }
+
+    // Fade hero content during first 30% of scroll
+    if (heroContent) {
+      var opacity = Math.max(1 - progress / 0.3, 0);
+      heroContent.style.opacity = opacity;
+      heroContent.style.transform = 'translateX(-50%) translateY(-50%) translateY(' + (progress * 40) + 'px)';
+    }
+  }
+
+  // ═══════════════════════════════════════
+  // HERO CONTENT FADE RESET
+  // ═══════════════════════════════════════
+  // Reset hero content when user scrolls back to top
+  var lastScrollY = 0;
+
+  function resetHeroContent() {
+    if (!heroContent) return;
+    // Only reset if we're above the hero section
+    if (window.scrollY < 60 && lastScrollY >= 60) {
+      heroContent.style.opacity = '';
+      heroContent.style.transform = '';
+    }
+    lastScrollY = window.scrollY;
   }
 
   // ─── Combined scroll handler ──────────
   function handleScroll() {
     updateNavbar();
     updateScrollHint();
+    if (canvas) updateFrames();
+    resetHeroContent();
   }
 
   // ═══════════════════════════════════════
@@ -116,6 +256,7 @@
     initReveal();
     animateCounters();
     initHamburger();
+    initCanvas();
   }
 
   if (document.readyState === 'loading') {

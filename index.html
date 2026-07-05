@@ -9,8 +9,7 @@
     content="NEXU es la plataforma de gestión de préstamos para prestamistas independientes, cooperativas y microfinancieras. Automatiza cobros, cuotas e intereses." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -23,14 +22,13 @@
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
       <a href="#" class="nav-logo">
-        <img src="LOGO NEXU APP NO LETTERS.png" alt="NEXU" class="logo-img" />
-        <span class="logo-text">NEXU</span>
+        <img src="NEXU LOGO BY ESTER X.png" alt="NEXU" class="logo-img" />
       </a>
       <ul class="nav-links">
         <li><a href="#features">Características</a></li>
         <li><a href="#how">Cómo funciona</a></li>
-        <li><a href="#guia">Guía de Usuario</a></li>
-        <li><a href="#metrics">Métricas</a></li>
+        <li><a href="#pricing">Precios</a></li>
+        <li><a href="#guia">Guía</a></li>
         <li><a href="#cta" class="btn-nav">Empieza gratis</a></li>
       </ul>
       <button class="hamburger" id="hamburger" aria-label="Menú">
@@ -40,15 +38,11 @@
   </nav>
 
   <!-- ═══════════════════════════════════════
-       HERO — VIDEO BACKGROUND
+       HERO — SCROLL-DRIVEN FRAMES
   ═══════════════════════════════════════ -->
   <section class="hero-section" id="hero">
-    <div class="hero-sticky" id="heroSticky">
-
-      <!-- Video de fondo -->
-      <video class="hero-video" id="heroVideo" autoplay muted loop playsinline>
-        <source src="Animate_video_for_landing_page_202605041640.mp4" type="video/mp4" />
-      </video>
+    <div class="hero-sticky">
+      <canvas id="frameCanvas"></canvas>
 
       <!-- Gradient overlay -->
       <div class="hero-overlay"></div>
@@ -60,8 +54,9 @@
           Gestión financiera inteligente
         </div>
         <h1 class="hero-title">
-          Donde el dinero<br />
-          <em>encuentra confianza.</em>
+          Controla tus<br />
+          <em>préstamos.</em><br />
+          Crece tu negocio.
         </h1>
         <p class="hero-sub">
           La plataforma todo-en-uno para prestamistas independientes,<br class="hide-sm" />
@@ -75,6 +70,11 @@
           <span>Desliza para explorar</span>
           <div class="scroll-arrow"></div>
         </div>
+      </div>
+
+      <!-- Frame progress indicator -->
+      <div class="frame-progress" id="frameProgress">
+        <div class="frame-progress-bar" id="frameProgressBar"></div>
       </div>
     </div>
   </section>
@@ -91,22 +91,43 @@
 
       <div class="pain-grid">
         <div class="pain-card reveal">
-          <div class="pain-icon">😰</div>
+          <div class="pain-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1bb9b5" stroke-width="2" width="24" height="24">
+              <rect x="3" y="4" width="18" height="18" rx="2" />
+              <path d="M8 12l2 2 4-4" />
+            </svg>
+          </div>
           <h3>Olvidos de cobro</h3>
           <p>Clientes que no pagan porque nadie les recordó. Fechas que se pierden entre apuntes y hojas de cálculo.</p>
         </div>
         <div class="pain-card reveal">
-          <div class="pain-icon">🔢</div>
+          <div class="pain-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1bb9b5" stroke-width="2" width="24" height="24">
+              <circle cx="12" cy="12" r="9" />
+              <path d="M12 7v5l3 3" />
+            </svg>
+          </div>
           <h3>Errores de cálculo</h3>
           <p>Intereses mal calculados, cuotas incorrectas y disputas con clientes por cifras que no cuadran.</p>
         </div>
         <div class="pain-card reveal">
-          <div class="pain-icon">📂</div>
+          <div class="pain-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1bb9b5" stroke-width="2" width="24" height="24">
+              <path d="M4 20h16" />
+              <path d="M6 16V8h4v8" />
+              <path d="M10 16V4h4v12" />
+              <path d="M14 16v-4h4v4" />
+            </svg>
+          </div>
           <h3>Información dispersa</h3>
           <p>Contratos en papel, WhatsApps, cuadernos y Excel desactualizados. Sin visibilidad real de tu cartera.</p>
         </div>
         <div class="pain-card reveal">
-          <div class="pain-icon">📉</div>
+          <div class="pain-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1bb9b5" stroke-width="2" width="24" height="24">
+              <path d="M12 2v4M12 18v4M4 12H2M22 12h-2M19.07 4.93l-2.83 2.83M7.76 16.24l-2.83 2.83M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83" />
+            </svg>
+          </div>
           <h3>Sin reportes claros</h3>
           <p>No sabes cuánto tienes prestado, cuánto te deben ni quiénes están en mora. Gestión a ciegas.</p>
         </div>
@@ -225,7 +246,12 @@
         <div class="step reveal">
           <div class="step-number">01</div>
           <div class="step-body">
-            <div class="step-icon">👤</div>
+            <div class="step-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#1bb9b5" stroke-width="2" width="22" height="22">
+                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+            </div>
             <h3>Registra tus clientes</h3>
             <p>Crea el perfil completo de cada cliente en segundos. Sube documentos, agrega contactos y comienza a
               construir tu historial crediticio digital.</p>
@@ -235,7 +261,12 @@
         <div class="step reveal">
           <div class="step-number">02</div>
           <div class="step-body">
-            <div class="step-icon">⚙️</div>
+            <div class="step-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#1bb9b5" stroke-width="2" width="22" height="22">
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <path d="M9 12l2 2 4-4" />
+              </svg>
+            </div>
             <h3>Configura préstamos</h3>
             <p>Define monto, plazo, tasa de interés y tipo de amortización. NEXU genera automáticamente el calendario de
               pagos y calcula todo.</p>
@@ -245,11 +276,73 @@
         <div class="step reveal">
           <div class="step-number">03</div>
           <div class="step-body">
-            <div class="step-icon">📊</div>
+            <div class="step-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#1bb9b5" stroke-width="2" width="22" height="22">
+                <path d="M12 2v4M12 22v-4M4 12H2M22 12h-2M19.07 4.93l-2.83 2.83M7.76 16.24l-2.83 2.83M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83" />
+              </svg>
+            </div>
             <h3>Cobra y monitorea</h3>
             <p>Recibe alertas de pagos, registra cobros, identifica mora temprana y visualiza el rendimiento de tu
               cartera en tiempo real.</p>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       PRECIOS
+  ═══════════════════════════════════════ -->
+  <section class="pricing-section" id="pricing">
+    <div class="container">
+      <div class="section-label reveal">Planes</div>
+      <h2 class="section-title reveal">Un plan para cada<br /><span class="accent">etapa de tu negocio</span></h2>
+      <p class="section-sub reveal">Empieza gratis y escala cuando lo necesites. Sin contratos ni sorpresas.</p>
+
+      <div class="pricing-grid">
+        <div class="pricing-card reveal">
+          <div class="pricing-name">Starter</div>
+          <div class="pricing-price">$0 <span>/mes</span></div>
+          <p class="pricing-desc">Perfecto para empezar a gestionar tus préstamos.</p>
+          <ul class="pricing-features">
+            <li>Hasta 50 clientes</li>
+            <li>100 préstamos gestionados</li>
+            <li>Dashboard básico</li>
+            <li>Recordatorios automáticos</li>
+            <li>Soporte por email</li>
+          </ul>
+          <a href="#cta" class="btn-primary">Empieza gratis</a>
+        </div>
+
+        <div class="pricing-card pricing-card--popular reveal">
+          <div class="pricing-badge">Más popular</div>
+          <div class="pricing-name">Growth</div>
+          <div class="pricing-price">$19 <span>/mes</span></div>
+          <p class="pricing-desc">Para prestamistas que buscan escalar su operación.</p>
+          <ul class="pricing-features">
+            <li>Clientes ilimitados</li>
+            <li>Préstamos ilimitados</li>
+            <li>Dashboard avanzado</li>
+            <li>Reportes financieros PDF</li>
+            <li>Alertas personalizables</li>
+            <li>Soporte prioritario</li>
+          </ul>
+          <a href="#cta" class="btn-primary">Lo quiero</a>
+        </div>
+
+        <div class="pricing-card reveal">
+          <div class="pricing-name">Enterprise</div>
+          <div class="pricing-price">$49 <span>/mes</span></div>
+          <p class="pricing-desc">Solución completa para instituciones financieras.</p>
+          <ul class="pricing-features">
+            <li>Todo lo de Growth</li>
+            <li>Múltiples empleados y rutas</li>
+            <li>API de integración</li>
+            <li>Reportes personalizados</li>
+            <li>Gerente de cuenta dedicado</li>
+            <li>SLA garantizado</li>
+          </ul>
+          <a href="#cta" class="btn-primary">Contactar</a>
         </div>
       </div>
     </div>
@@ -636,9 +729,8 @@
   <section class="metrics-section" id="metrics">
     <div class="metrics-bg"></div>
     <div class="container">
-      <div class="section-label reveal" style="color:#10b981">Impacto real</div>
-      <h2 class="section-title reveal" style="color:#fff">Números que<br /><span style="color:#10b981">hablan por sí
-          solos</span></h2>
+      <div class="section-label reveal">Impacto real</div>
+      <h2 class="section-title reveal">Números que<br /><span class="accent">hablan por sí solos</span></h2>
 
       <div class="metrics-grid">
         <div class="metric-card reveal">
@@ -736,8 +828,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="#" class="nav-logo">
-            <span class="logo-icon">N</span>
-            <span class="logo-text">NEXU</span>
+        <img src="NEXU LOGO BY ESTER X.png" alt="NEXU" class="logo-img" />
           </a>
           <p>La plataforma de gestión de préstamos para el prestamista moderno.</p>
           <div class="footer-social">
@@ -751,8 +842,8 @@
           <ul>
             <li><a href="#features">Características</a></li>
             <li><a href="#how">Cómo funciona</a></li>
+            <li><a href="#pricing">Precios</a></li>
             <li><a href="#metrics">Casos de éxito</a></li>
-            <li><a href="#cta">Precios</a></li>
           </ul>
         </div>
         <div class="footer-col">
