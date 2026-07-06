@@ -544,6 +544,19 @@ img { max-width: 100%; display: block; }
   color: var(--text-tertiary);
   margin-bottom: 12px;
 }
+.pricing-price {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--text-primary);
+  letter-spacing: -0.04em;
+  margin-bottom: 8px;
+}
+.pricing-price small {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-tertiary);
+  letter-spacing: -0.02em;
+}
 .pricing-trial {
   font-size: 0.82rem;
   font-weight: 600;
